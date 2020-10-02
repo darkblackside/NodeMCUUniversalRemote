@@ -7,12 +7,12 @@
 #include <IRrecv.h>
 #include <IRutils.h>
 
-const char* ssid = "xxxx";
-const char* password = "xxxx";
+const char* ssid = "xxxx"; //  your own hostpot name 
+const char* password = "xxxx"; // and password
 
 uint16_t RECV_PIN = 4;
 
-IPAddress ip(192,168,0,7);
+IPAddress ip(192,168,0,7); // your ip address
 IPAddress gateway(192,168,0,1);
 IPAddress subnet(255,255,255,0);
 
@@ -266,7 +266,7 @@ void handleNotFound(){
 void setup(void){
   irsend.begin();
   irrecv.enableIRIn();
-  Serial.begin(115200);
+  Serial.begin(115200);// communication of hardware 
   WiFi.begin(ssid, password);
   WiFi.config(ip, gateway, subnet);
   
